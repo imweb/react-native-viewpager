@@ -200,6 +200,14 @@ const ViewPager = React.createClass({
     }
   },
 
+  onPageScrollStateChanged(state) {
+    if(state !== 'idle') {
+      clearTimeout(this.autoplayTimer);
+    } else {
+      this.autoplay();
+    }
+  },
+
   renderContent(pages) {
     if (Platform.OS === 'ios') {
       return (
@@ -228,6 +236,7 @@ const ViewPager = React.createClass({
                           {...this.props} 
                           initialPage={this.props.infinite ? this.state.selectedIndex + 1 : this.state.selectedIndex}
                           onPageSelected={this.onScrollEnd}
+                          onPageScrollStateChanged={this.onPageScrollStateChanged}
                           style={{flex: 1}}>
           {pages}
         </ViewPagerAndroid>
