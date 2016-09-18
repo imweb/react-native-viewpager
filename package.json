@@ -1,7 +1,8 @@
 {
-  "name": "react-native-viewpager",
+  "name": "imui-react-native-viewpager",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
+  "main": "ViewPager.js",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
