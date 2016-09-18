@@ -4,6 +4,7 @@ import {
   TouchableWithoutFeedback,
   StyleSheet,
   Text,
+  Image,
   View
 } from 'react-native';
 
@@ -50,7 +51,8 @@ export default class Demo extends Component {
                    afterChange={this.onselectedIndexChange}>
           <TouchableWithoutFeedback onPress={this.onPress}>
             <View style={[styles.container, {backgroundColor: '#aaaaaa'}]}>
-              <Text>Carousel 1</Text>
+              <Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+                     style={{width: 50, height: 50}} />
             </View>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback onPress={this.onPress}>
